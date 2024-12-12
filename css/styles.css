@@ -1,0 +1,408 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dcdcdd;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    overflow: hidden; /* Запрещаем прокрутку */
+    height: 100vh; /* Задаем высоту окна браузера */
+    width: 100vw; /* Задаем ширину окна браузера */
+}
+
+header {
+    position: absolute; /* Фиксация хедера в верхней части */
+    top: 0;
+    width: 100%;
+    padding-top: 3%;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #dc2f44;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-button {
+    background-color: #dc2f44;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    color: #ffffff;
+    background-color: #ad303f;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column; /* Все элементы по вертикали */
+}
+
+.top-container {
+    display: flex;
+    gap: 10px; /* Промежутки между skills и name блоками */
+}
+
+.center-container {
+    display: flex;
+    gap: 10px; /* Промежутки между skills и name блоками */
+}
+
+.bottom-container {
+    display: flex;
+    gap: 10px; /* Промежутки между skills и name блоками */
+}
+
+.speciality-name-container{
+    display: flex;
+    flex-direction: column; /* Все элементы по вертикали */
+}
+
+
+/* Определяем анимацию */
+/* Анимация для появления слева */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px); /* Начало слева */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Конечная позиция */
+    }
+}
+
+/* Анимация для появления справа */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px); /* Начало справа */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Конечная позиция */
+    }
+}
+
+/* Анимация для появления сверху */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Начало сверху */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Конечная позиция */
+    }
+}
+
+/* Анимация для появления снизу */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Начало снизу */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Конечная позиция */
+    }
+}
+
+/*SKILLS TILE*/
+
+.skills-tile {
+    border-radius: 15px;
+    width: 130px;
+    height: 170px;
+    color: #dc2f44;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInLeft 0.6s ease-out forwards; /* Анимация для tile */
+}
+
+.skills-title {
+    margin-top: 10px;
+    font-size: 28px;
+    margin-bottom: -5px; /* Увеличено расстояние между заголовком и списком */
+}
+
+.skills-list {
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding-left: 0; /* Убираем отступ слева */
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center; /* Выравниваем иконки с текстом по вертикали */
+    margin-bottom: 8px; /* Отступ между элементами списка */
+}
+
+.skill-icon {
+    fill: #dc2f44; /* Это изменит цвет иконок на красный */
+    width: 20px;   /* Настроить ширину */
+    height: 20px;  /* Настроить высоту */
+    margin-right: 10px; /* Расстояние между иконкой и текстом */
+}
+
+
+.top-decoration-tile {
+    border-radius: 15px;
+    width: 210px;
+    height: 210px;
+    background-image: url('../images/avatar.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInUp 0.6s ease-out forwards; /* Анимация для tile */
+}
+
+.resume-tile {
+    border-radius: 15px;
+    width: 330px;
+    height: 210px;
+    background-color: #dc2f44;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    transition: transform 0.3s ease; /* Плавное увеличение */
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInUp 0.3s ease-out forwards; /* Анимация для tile */
+}
+
+.download-text {
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center; /* Ensures multi-line text is centered */
+    text-decoration: none;
+}
+
+.resume-tile:hover{
+    transform: scale(0.98); /* Увеличение на 10% */
+    background-color: #c22538;
+}
+
+a {
+    text-decoration: none; /* Removes underline from links */
+}
+
+/*!SKILLS TILE*/
+
+
+/*NAME TILE*/
+.name-tile{
+    border-radius: 15px;
+    width: 300px;
+    height: 100px;
+    color: #ffffff;
+    background-color: #dc2f44;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 10px; /* Уменьшаем отступ между элементами */
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInLeft 0.4s ease-out forwards; /* Анимация для tile */
+}
+
+.name{
+    font-size: 28px;
+}
+/*!NAME TILE*/
+
+/*SPECIALITY TILE*/
+.speciality-tile{
+    border-radius: 15px;
+    width: 300px;
+    height: 100px;
+    color: #dc2f44;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInLeft 0.5s ease-out forwards; /* Анимация для tile */
+}
+
+.speciality{
+    font-size: 28px;
+}
+/*!SPECIALITY TILE*/
+
+/*INFORMATION TILE*/
+.information-tile {
+    border-radius: 15px;
+    width: 300px;
+    height: 250px; /* Высота автоматически под содержимое */
+    color: #dc2f44;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    display: flex; 
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInDown 0.3s ease-out forwards; /* Анимация для tile */
+}
+
+.info-title {
+    margin-top: 10px;
+    font-size: 28px;
+    margin-bottom: -5px; /* Увеличено расстояние между заголовком и списком */
+}
+
+.info-list {
+    list-style-type: circle; /* Тип маркера */
+    padding-left: 30px; /* Уменьшен отступ слева */
+    font-size: 16px;
+    text-align: left; /* Выравнивание текста списка */
+}
+
+.info-list li {
+    color: #333; /* Цвет текста */
+    margin-bottom: 5px; /* Расстояние между элементами */
+}
+
+.info-list li::marker {
+    color: #dc2f44; /* Цвет маркера */
+}
+
+.languages {
+    line-height: 1.3; /* Увеличивает расстояние между строками */
+}
+
+.decoration-tile {
+    border-radius: 15px;
+    width: 130px;
+    height: 290px; /* Высота автоматически под содержимое */
+    background-image: url('../images/decoration.jpg'); /* Путь к картинке */
+    background-size: cover; /* Покрывает весь элемент фоном */
+    background-position: center; /* Центрирует картинку */
+    background-repeat: no-repeat; /* Запрещает повторение картинки */
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInDown 0.6s ease-out forwards; /* Анимация для tile */
+}
+
+.experience-tile{
+    border-radius: 15px;
+    width: 510px;
+    height: 250px; /* Высота автоматически под содержимое */
+    color: #dc2f44;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    display: flex; 
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInRight 0.5s ease-out forwards; /* Анимация для tile */
+}
+
+/* Заголовок Experience */
+.exp-title {
+    font-size: 28px;
+    margin: 0 0 15px 0; /* Отступ снизу */
+    color: #dc2f44; /* Основной цвет заголовка */
+}
+
+/* Список опыта */
+.experience-list {
+    list-style-type: circle; /* Красный кружок как маркер */
+    padding-left: 20px; /* Отступ для маркера */
+    margin: 0; /* Убираем внешние отступы */
+    color: #dc2f44; /* Цвет маркера */
+}
+
+/* Элемент списка */
+.experience-list li {
+    margin-bottom: 15px; /* Расстояние между элементами списка */
+    color: #333; /* Цвет текста */
+}
+
+/* Подзаголовок опыта */
+.exp-desc-header {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0; /* Убираем отступы */
+    color: #333; /* Цвет текста подзаголовка */
+}
+
+/* Описание опыта */
+.exp-desc {
+    font-size: 13px;
+    margin: 5px 0 0 0; /* Расстояние сверху */
+    color: #636363; /* Цвет текста описания */
+    line-height: 1.5; /* Увеличиваем межстрочный интервал для читаемости */
+}
+
+
+
+
+/*!INFORMATION TILE*/
+
+/*CONTACTS TILE*/
+.contacts-tile {
+    border-radius: 15px;
+    width: 1000px;
+    height: auto;
+    color: #ffffff;
+    background-color: #dc2f44;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    opacity: 0; /* Начальная скрытая прозрачность */
+    animation: fadeInLeft 0.5s ease-out forwards; /* Анимация для tile */
+}
+
+.links {
+    display: flex;
+    justify-content: space-between; /* Ссылки будут расположены в одну линию */
+    width: 700px; /* Чтобы все ссылки занимали всю ширину */
+}
+
+.links a {
+    display: flex;
+    align-items: center; /* Выравнивание иконки и текста по вертикали */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавное изменение цвета и трансформации */
+}
+
+.links a:hover {
+    color: #ffffff9c; /* Изменение цвета текста при наведении */
+    transform: scale(0.98);
+}
+
+.icon {
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+/*!CONTACTS TILE*/
+

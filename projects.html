@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <title>Iskandar's Projects</title>
+    <link rel="stylesheet" href="../css/pr-styles.css">
+    <script src="../js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <button class="nav-button" onclick="navigate('home')">Home</button>
+            <button class="nav-button" onclick="navigate('projects')">Projects</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects-container">
+            <div class="project-tile">
+                <div class="project-top">
+                    <img src="../images/project1.png" alt="Project 1 Image" class="project-image">
+                </div>
+
+                <div class="project-content">
+                        <h2 class="project-title">Lofi Pomodoro</h2>
+                        <p class="project-desc">A simple Pomodoro timer with lofi music integration for better focus and productivity</p>
+                    <div class="project-links">
+                        <a href="https://iskander-rassulov.github.io/lofi-pomodoro/" class="project-link" target="_blank">View Project</a>
+                        <a href="https://github.com/iskander-rassulov/lofi-pomodoro" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+            </div>            
+
+            <div class="project-tile">
+                <div class="project-top">
+                    <img src="../images/project2.png" alt="Project 2 Image" class="project-image">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Fantasy World Maker</h2>
+                    <p class="project-desc">This website provides ability to create your own fantasy world</p>
+                    <div class="project-links">
+                        <a href="https://github.com/iskander-rassulov/medieval_html" class="project-link" target="_blank">View Project</a>
+                        <a href="https://github.com/iskander-rassulov/medieval_html" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="project-tile">
+                <div class="project-top">
+                    <img src="../images/project3.png" alt="Project 3 Image" class="project-image">
+                </div>
+                
+                <div class="project-content">
+                    <h2 class="project-title">Medical Records Management System</h2>
+                    <p class="project-desc">Simplified system for managing electronic medical records</p>
+                    <div class="project-links">
+                        <a href="https://www.youtube.com/watch?v=80VjwO4nTTg" class="project-link" target="_blank">View Project</a>
+                        <a href="https://github.com/iskander-rassulov/java_medical-records-management-system" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        function navigate(page) {
+            if (page === 'home') {
+                window.location.href = 'index.html';
+            } else if (page === 'projects') {
+                window.location.href = 'projects.html';
+            }
+        }
+    </script>
+</body>
+</html>

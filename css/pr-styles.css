@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dcdcdd;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* Хедер - стили уже приведены, можно оставить без изменений или интегрировать */
+header {
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    padding-top: 3%;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #dc2f44;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-button {
+    background-color: #dc2f44;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    color: #ffffff;
+    background-color: #ad303f;
+}
+
+.project-tile {
+    opacity: 0; /* Скрываем плитки изначально */
+    transform: translateX(0); /* Базовое положение */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Анимация смещения и появления */
+}
+
+.project-tile.animate-left {
+    transform: translateX(-100px); /* Сдвиг влево */
+}
+
+.project-tile.animate-right {
+    transform: translateX(100px); /* Сдвиг вправо */
+}
+
+.project-tile.visible {
+    opacity: 1; /* Плитка становится видимой */
+    transform: translateX(0); /* Плитка возвращается в исходное положение */
+}
+
+/* Основной контейнер для проектов */
+main {
+    padding-top: 100px; /* отступ для учета фиксированного header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-gap: 20px;
+    padding: 40px;
+}
+
+/* Плитки проектов */
+.project-tile {
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 15px;
+    width: 400px;
+    height: 450px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative; /* Для позиционирования дочерних элементов */
+}
+
+.project-top {
+    border-radius: 15px 15px 0 0; /* Скругляем только верхние углы */
+    overflow: hidden; /* Чтобы скругление применялось и к изображению */
+    height: 210px; /* Фиксируем высоту блока с изображением */
+}
+
+.project-top img.project-image {
+    width: 100%; /* Изображение заполняет весь контейнер */
+    height: 100%; /* Изображение заполняет весь контейнер по высоте */
+    object-fit: fill; /* Масштабируем изображение, чтобы оно заполнило блок пропорционально */
+    display: block;
+}
+
+.project-content {
+    padding: 20px; /* Отступы для текстового блока */
+    flex-grow: 1; /* Растягиваем текстовый блок для равномерного заполнения */
+}
+
+.project-title {
+    font-size: 24px;
+    margin: 0 0 10px 0; /* Добавляем отступ снизу */
+}
+
+.project-desc {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.project-links {
+    position: absolute; /* Абсолютное позиционирование внутри плитки */
+    bottom: 20px; /* Фиксируем расстояние от нижнего края */
+    left: 50%; /* Центруем по горизонтали */
+    transform: translateX(-50%); /* Смещаем на половину ширины для выравнивания */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.project-link {
+    background-color: #dc2f44;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #ad303f;
+}
