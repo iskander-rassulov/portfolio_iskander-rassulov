@@ -11,12 +11,7 @@ body {
     width: 100vw; /* Задаем ширину окна браузера */
 }
 
-header {
-    position: absolute; /* Фиксация хедера в верхней части */
-    top: 0;
-    width: 100%;
-    padding-top: 3%;
-}
+
 
 .header-nav {
     display: flex;
@@ -24,7 +19,7 @@ header {
     gap: 10px;
     background-color: #dc2f44;
     width: fit-content;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 10px;
     border-radius: 8px;
 }
