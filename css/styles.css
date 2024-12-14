@@ -11,15 +11,21 @@ body {
     width: 100vw; /* Задаем ширину окна браузера */
 }
 
-
+.header-spacer {
+    width: 100%; /* Полная ширина */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; /* Отступы для создания единого уровня */
+    background-color: transparent; /* Или задайте общий цвет для хедера */
+    position: relative;
+}
 
 .header-nav {
     display: flex;
     justify-content: center;
     gap: 10px;
-    background-color: #dc2f44;
+    background-color: #dc2f44; /* Общий цвет хедера */
     width: fit-content;
-    margin: 30px auto;
     padding: 10px;
     border-radius: 8px;
 }
